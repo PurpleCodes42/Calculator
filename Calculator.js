@@ -45,7 +45,6 @@ function getLine() {
 /* display in line */
 
 function setCalc(a){
-    calculations.push(a);
     displayValues.push(currentDisplayValue);
     currentDisplayValue = "";
     switch (a){
@@ -62,6 +61,7 @@ function setCalc(a){
             a = " x ";
             break;
     }
+    displayValues.push(a);
     line.textContent = line.textContent + a;
 }
 
@@ -72,42 +72,34 @@ function setNumbers(a){
 
 function displayResult() {
     displayValues.push(currentDisplayValue);
-    let result = 0;
+    searchSpecificCalc(" x ");
+    searchSpecificCalc(" : ");
+    searchSpecificCalc(" + ");
+    searchSpecificCalc(" - ");
+    line.textContent = line.textContent + " = " + displayValues[0];
+}
+
+function searchSpecificCalc(calcu){
     for (let i = 1; i < displayValues.length; i++){
-        console.log(calculations);
-        console.log(displayValues);
-        console.log(calculations[i-1]);
-        console.log(displayValues[i-1]);
-        console.log(displayValues[i]);
-        switch (calculations[i-1]){
-            case "plus" : 
-                result = displayValues[i-1] + displayValues[i];
-                break;
-            case "minu" : 
-                result = displayValues[i-1] - displayValues[i];
-                break;
-            case "mult" : 
-                result = displayValues[i-1] * displayValues[i];
-                break;
-            case "divi" : 
-                result = displayValues[i-1] / displayValues[i];
-                break;
+        if (displayValues[i] == calcu){
+        result = operate(parseFloat(displayValues[i-1]), parseFloat(displayValues[i+1]), displayValues[i]);
+        displayValues.splice(i-1,3,result);
+        i = i - 1;
         }
-    }
-    line.textContent = line.textContent + " = " + result;
+    }   
 }
 
 function operate(a, b, calcu){
-    if (calcu == plus){
+    if (calcu == " + "){
         return a + b;
     }
-    if (calcu == minu){
+    if (calcu == " - "){
         return a - b
     }
-    if (calcu == divi){
+    if (calcu == " : "){
         return a/b;
     }
-    if (calcu == multi){
+    if (calcu == " x "){
         return a*b;
     }
 }
