@@ -36,6 +36,9 @@ resultButton.addEventListener("click", displayResult);
 const clearButton = document.querySelector("#clear");
 clearButton.addEventListener("click", clearDisplay);
 
+const clearLastValue = document.querySelector("#back");
+clearLastValue.addEventListener("click", clearValue);
+
 /* put numbers in display */
 
 function setNumbers(a){
@@ -95,6 +98,14 @@ function displayResult() {
         line.textContent = line.textContent + " = " + displayValues[0];   
     }
 }
+
+/* clear last value */
+
+function clearValue(){
+    line.textContent = line.textContent.slice(0, line.textContent.length-1);
+    currentDisplayValue = currentDisplayValue.slice(0, currentDisplayValue.length-1);
+}
+
 
 /* clear display */
 
