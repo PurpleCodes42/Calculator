@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(199, 231, 199);
+}
+
+#line {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    background-color: white;
+    width: 450px; 
+    height: 50px;  
+}
+
+#numbers {
+    width: 450px; 
+    height: 450px; 
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: auto;
+}
+
+#numbers button {
+    background-color: rgb(59, 156, 59);
+    border-style: none; 
+    margin: 5px 5px 5px 5px;
+}
+
+#numbers button:hover {
+    background-color: rgb(51, 139, 51);
+}
