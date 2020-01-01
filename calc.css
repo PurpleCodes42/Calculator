@@ -1,33 +1,95 @@
 body {
-    background-color: rgb(199, 231, 199);
+    background-color: white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(222, 247, 222)
 }
 
 #line {
-    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5px;
     background-color: white;
-    width: 450px; 
-    height: 50px;  
+    width: 360px; 
+    height: 70px;  
+    font-size: 200%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(199, 231, 199);
+}
+
+.buttons {
+    margin: auto;
+    width: 350px;  
+    height: 420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: rgb(199, 231, 199);
+    padding: 5px 5px 5px 5px;
+}
+
+#back, #clear {
+    font-size: 180%;
 }
 
 #numbers {
-    width: 450px; 
-    height: 450px; 
-    background-color: white;
-    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;  
+    grid-row-start: 2;
+    grid-row-end: 6; 
+    display: grid; 
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    margin: auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;   
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
-#numbers button {
+#calcs {
+    grid-column-start: 4;
+    grid-column-end: 5;  
+    grid-row-start: 2;
+    grid-row-end: 6; 
+    display: grid; 
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    font-size: 150%;
+}
+
+#back {
+    grid-column-start: 1;
+    grid-column-end: 3; 
+}
+
+#clear {
+    grid-column-start: 3;
+    grid-column-end: 5; 
+}
+
+#result {
+    grid-column-start: 2;
+    grid-column-end: 4;  
+    grid-row-start: 5;
+    grid-row-end: 5; 
+}
+
+button {
     background-color: rgb(59, 156, 59);
-    border-style: none; 
-    margin: 5px 5px 5px 5px;
+    border-style: none;
+    font-size: 200%;
+    font-family: Helvetica, Arial, sans-serif 
+    
 }
 
-#numbers button:hover {
+#calcs button, #back, #clear {
+    background-color: rgb(105, 189, 105); 
+}
+
+button:hover {
     background-color: rgb(51, 139, 51);
 }

@@ -79,7 +79,6 @@ function setCalc(a){
 
 function displayResult() {
     displayValues.push(currentDisplayValue);
-    console.log(displayValues);
     if (displayValues[displayValues.length-1] == ""){
         window.alert("Please complete the calculation!");
         displayValues.pop();
@@ -152,8 +151,3 @@ Math.roundBy = function (decimalPlaces, n) {
     var scale = Math.pow(10, decimalPlaces);
     return Math.round(scale * n) / scale;
 };
-
-/*
-container.style.gridTemplateColumns = `repeat(4, 1fr)`;
-container.style.gridTemplateRows = `repeat(4, 1fr)`;
-*/
