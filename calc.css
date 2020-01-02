@@ -73,10 +73,6 @@ h1 {
     background-color: rgb(105, 189, 105);
 }
 
-#result:hover {
-    background-color: rgb(97, 179, 97);
-}
-
 #point {
     grid-column-start: 2;
     grid-row-start: 5;   
@@ -96,4 +92,13 @@ button {
 
 button:hover {
     background-color: rgb(51, 139, 51);
+}
+
+#calcs button:hover, #back:hover, #clear:hover, #result:hover {
+    background-color: rgb(98, 173, 98);  
+}
+
+button:active {
+    border-style: solid;
+    border-color: white;
 }
