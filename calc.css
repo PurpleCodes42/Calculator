@@ -1,7 +1,3 @@
-body {
-    background-color: white;
-}
-
 h1 {
     display: flex;
     justify-content: center;
@@ -72,10 +68,18 @@ h1 {
 }
 
 #result {
+    grid-column-start: 3;
+    grid-row-start: 5;  
+    background-color: rgb(105, 189, 105);
+}
+
+#result:hover {
+    background-color: rgb(97, 179, 97);
+}
+
+#point {
     grid-column-start: 2;
-    grid-column-end: 4;  
-    grid-row-start: 5;
-    grid-row-end: 5; 
+    grid-row-start: 5;   
 }
 
 button {
