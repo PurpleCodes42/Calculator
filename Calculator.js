@@ -182,6 +182,8 @@ function testAlert() {
 
 /* little helpers */
 
+/* array for calculating the result */
+
 function searchSpecificCalc(calcu){
     for (let i = 1; i < displayValues.length; i++){
         if (displayValues[i] == calcu){
@@ -191,6 +193,8 @@ function searchSpecificCalc(calcu){
         }
     }   
 }
+
+/* calculations */
 
 function operate(a, b, calcu){
     if (calcu == " + "){
@@ -211,6 +215,8 @@ function operate(a, b, calcu){
         return a*b;
     }
 }
+
+/*rounding by 1 decimal */
 
 Math.roundBy = function (decimalPlaces, n) {
     var scale = Math.pow(10, decimalPlaces);
